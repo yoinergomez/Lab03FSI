@@ -175,6 +175,14 @@ public class VehiculoController implements Serializable {
         if (items == null) {
             items = getPagination().createPageDataModel();
         }
+        for (Object item : items) {
+            try {
+                System.out.println("@@@ Image"+((Vehiculo) item).getImagen());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            
+        }
         return items;
     }
 

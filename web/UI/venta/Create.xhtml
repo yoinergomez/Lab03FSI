@@ -23,7 +23,7 @@
                     <h:inputText id="id" value="#{ventaController.selected.id}" title="#{bundle.CreateVentaTitle_id}" required="true" requiredMessage="#{bundle.CreateVentaRequiredMessage_id}"/>
                     <h:outputLabel value="#{bundle.CreateVentaLabel_fecha_venta}" for="fecha_venta" />
                     <h:inputText id="fecha_venta" value="#{ventaController.selected.fecha_venta}" title="#{bundle.CreateVentaTitle_fecha_venta}" >
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="dd/MM/yyyy" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreateVentaLabel_vehiculo}" for="vehiculo" />
                     <h:selectOneMenu id="vehiculo" value="#{ventaController.selected.vehiculo}" title="#{bundle.CreateVentaTitle_vehiculo}" >

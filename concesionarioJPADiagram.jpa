@@ -65,7 +65,7 @@
     <jpa:diagram>
         <plane elementRef="_14748157385481">
             <shape elementRef="_1474815746467">
-                <Bounds x="49.0" y="65.0" width="146.0" height="178.0"/>
+                <Bounds x="48.0" y="65.0" width="146.0" height="178.0"/>
             </shape>
             <shape elementRef="_1474816209832">
                 <Bounds x="256.0" y="136.0" width="138.0" height="107.0"/>
