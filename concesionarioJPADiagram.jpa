@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="1.5.4" xs="false" id="_14748157385481" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:default-class abs="false" class="VentaPK" visibile="true" minimized="false">
+        <jpa:embeddable>false</jpa:embeddable>
+        <jpa:attribute attribute-type="String" visibile="true" name="vehiculo"/>
+        <jpa:attribute attribute-type="Long" visibile="true" name="cliente"/>
+    </jpa:default-class>
+    <jpa:entity name="Cliente" xre="false" sm="false" abs="false" class="Cliente" visibile="true" minimized="false" rootElement="_14748157385481" id="_1474815746467">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="nombre" id="_14748158033304">
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true" length="50" precision="0" scale="0"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="telefono" id="_14748159943865">
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true" length="25" precision="0" scale="0"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="direccion" id="_14748160122186">
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true" length="50" precision="0" scale="0"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="ciudad" id="_14748161064867">
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true" length="25" precision="0" scale="0"/>
+            </basic>
+            <one-to-many collection-type="java.util.List" connected-entity-id="_1474816209832" connected-attribute-id="_147482028559438" visibile="true" name="ventas" id="_147482028559839"/>
+            <jpa:id attribute-type="Long" visibile="true" name="cedula" id="_14748157465022">
+                <jpa:column unique="true" nullable="false" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+                <jpa:generated-value/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="IDCLASS" compositePrimaryKeyClass="VentaPK" sm="false" abs="false" class="Venta" visibile="true" minimized="false" rootElement="_14748157385481" id="_1474816209832">
+        <jpa:attributes>
+            <basic attribute-type="java.util.Date" visibile="true" name="fecha_venta" id="_147481810277420">
+                <jpa:temporal>DATE</jpa:temporal>
+            </basic>
+            <many-to-one optional="true" primaryKey="true" connected-entity-id="_1474818240084" connected-attribute-id="_147482025570537" visibile="true" name="vehiculo" id="_147482025570136"/>
+            <many-to-one optional="true" primaryKey="true" connected-entity-id="_1474815746467" connected-attribute-id="_147482028559839" visibile="true" name="cliente" id="_147482028559438"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Vehiculo" visibile="true" minimized="false" rootElement="_14748157385481" id="_1474818240084">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="marca" id="_147481825677624">
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="modelo" id="_147481825715225">
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="color" id="_147481825739226"/>
+            <basic attribute-type="int" visibile="true" name="precio" id="_147481825775227">
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+            </basic>
+            <basic fetch="LAZY" attribute-type="byte[]" visibile="true" name="imagen" id="_147481828163128">
+                <jpa:lob/>
+            </basic>
+            <one-to-many collection-type="java.util.List" connected-entity-id="_1474816209832" connected-attribute-id="_147482025570136" visibile="true" name="ventas" id="_147482025570537"/>
+            <jpa:id attribute-type="String" visibile="true" name="placa" id="_147481824008522">
+                <jpa:column unique="true" nullable="false" insertable="true" updatable="true" length="10" precision="0" scale="0"/>
+                <jpa:generated-value/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Collection</ct>
+    </jpa:c>
+    <jpa:diagram>
+        <plane elementRef="_14748157385481">
+            <shape elementRef="_1474815746467">
+                <Bounds x="49.0" y="65.0" width="146.0" height="178.0"/>
+            </shape>
+            <shape elementRef="_1474816209832">
+                <Bounds x="256.0" y="136.0" width="138.0" height="107.0"/>
+            </shape>
+            <shape elementRef="_1474818240084">
+                <Bounds x="471.0" y="25.0" width="156.0" height="198.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>

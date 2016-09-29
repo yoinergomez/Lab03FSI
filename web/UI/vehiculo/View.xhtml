@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewVehiculoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewVehiculoLabel_marca}"/>
+                    <h:outputText value="#{vehiculoController.selected.marca}" title="#{bundle.ViewVehiculoTitle_marca}"/>
+                    <h:outputText value="#{bundle.ViewVehiculoLabel_precio}"/>
+                    <h:outputText value="#{vehiculoController.selected.precio}" title="#{bundle.ViewVehiculoTitle_precio}"/>
+                    <h:outputText value="#{bundle.ViewVehiculoLabel_color}"/>
+                    <h:outputText value="#{vehiculoController.selected.color}" title="#{bundle.ViewVehiculoTitle_color}"/>
+                    <h:outputText value="#{bundle.ViewVehiculoLabel_imagen}"/>
+                    <h:outputText value="#{vehiculoController.selected.imagen}" title="#{bundle.ViewVehiculoTitle_imagen}"/>
+                    <h:outputText value="#{bundle.ViewVehiculoLabel_modelo}"/>
+                    <h:outputText value="#{vehiculoController.selected.modelo}" title="#{bundle.ViewVehiculoTitle_modelo}"/>
+                    <h:outputText value="#{bundle.ViewVehiculoLabel_placa}"/>
+                    <h:outputText value="#{vehiculoController.selected.placa}" title="#{bundle.ViewVehiculoTitle_placa}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{vehiculoController.destroyAndView}" value="#{bundle.ViewVehiculoDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewVehiculoEditLink}"/>
+                <br />
+                <h:commandLink action="#{vehiculoController.prepareCreate}" value="#{bundle.ViewVehiculoCreateLink}" />
+                <br />
+                <h:commandLink action="#{vehiculoController.prepareList}" value="#{bundle.ViewVehiculoShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewVehiculoIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
